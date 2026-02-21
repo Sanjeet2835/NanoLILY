@@ -17,20 +17,6 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 
 ---
 
-## Repository Structure
-
-```text
-NanoLILY/
-├── dataset/            # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
-├── notebook/           # Core code: Pre-training and fine-tuning Jupyter notebooks
-├── model/              # Saved PyTorch checkpoints (.pth)
-├── results/            # Visual comparisons (Before/After/Ground Truth)
-├── other docs/         # Deep-dive documentation (Architecture maps, training logs)
-├── README.md           # Project overview and quickstart
-└── requirements.txt    # Python dependencies
-```
----
-
 ## 🧠 Training Strategy: Two-Stage Pipeline
 To maximize the model's ability to generalize across different low-light conditions, the training was executed in a two-phase pipeline:
 
@@ -57,4 +43,17 @@ Baseline evaluation yields highly efficient structural recovery relative to the 
 
 ---
 
+## Repository Structure
+
+```text
+NanoLILY/
+├── dataset/            # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
+├── notebook/           # Core code: Pre-training and fine-tuning Jupyter notebooks
+├── model/              # Saved PyTorch checkpoints (.pth)
+├── results/            # Visual comparisons (Before/After/Ground Truth)
+├── other docs/         # Deep-dive documentation (Architecture maps, training logs)
+├── README.md           # Project overview and quickstart
+└── requirements.txt    # Python dependencies
+```
+---
 
