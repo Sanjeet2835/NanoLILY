@@ -33,7 +33,7 @@ To maximize the model's ability to generalize across different low-light conditi
 ---
 
 ## Performance Metrics
-Baseline evaluation yields highly efficient structural recovery relative to the minimal parameter count (Fine-tuning run, Early Stopping triggered at Epoch 16):
+Evaluation yields highly efficient structural recovery relative to the minimal parameter count:
 
 * **Validation SSIM:** ~0.797
 * **Validation PSNR:** ~18.64 dB
