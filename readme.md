@@ -64,7 +64,7 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 
 ### low00730
 
-![eval_low00730.png](sample-wise-evaluation/eval_low00730.png)
+![eval_low00730.png](results/sample-wise-evaluation/eval_low00730.png)
 
 ---
 
