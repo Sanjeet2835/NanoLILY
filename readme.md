@@ -54,9 +54,7 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 * **Validation SSIM:** ~0.797
 * **Validation PSNR:** ~18.64 dB
 * **Validation Loss:** ~0.168
-
-*(Note: See the `results/` folder for extended visual comparisons across various lighting conditions).*
-
+  
 ---
 
 ## Visual Results
