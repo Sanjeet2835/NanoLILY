@@ -16,18 +16,19 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 * **Perceptual Optimization:** Trained using a composite loss function blending VGG-19 Perceptual Loss, Structural Similarity (SSIM), and L1 Pixel loss to ensure outputs are both structurally sound and visually pleasing.
 
 ---
-## Repository Structure
+
+## 📂 Repository Structure
 
 ```
 NanoLILY/
-├── dataset/                     # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
-├── notebooks/                   # Core code: Pre-training, fine-tuning, and inference Jupyter notebooks
+├── dataset/                     # Training and validation datasets (LoL v1 & LoL v2)
+├── notebooks/                   # Core code: Pre-training, fine-tuning, and inference
 ├── model/                       # Saved PyTorch Lightning checkpoints (.ckpt / .pth)
 ├── results/                     # Visual evaluations and metrics
-│   ├── sample-wise-evaluation/  # 40+ generated Before/After/Ground Truth image grids
-│   └── all-results.md           # Compilation of all Before/After/Ground Truth image grids in one file
-├── docs/                        # Deep-dive documentation (Architecture maps, training logs)
-├── README.md                    # Project overview, 129K parameter specs, and quickstart
+│   ├── sample-wise-evaluation/  # 40+ generated Before/After/Target grids
+│   └── all-results.md           # Scrollable markdown gallery of all test samples
+├── docs/                        # Deep-dive documentation (Architecture maps, logs)
+├── README.md                    # Project overview and quickstart
 └── requirements.txt             # Python dependencies
 ```
 
@@ -36,12 +37,12 @@ NanoLILY/
 To maximize the model's ability to generalize across different low-light conditions, the training was executed in a two-phase pipeline:
 
 1. **Phase 1: Baseline Pre-Training (LoL v1 Dataset)**
-   * **Notebook:**(https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/NanoLILY%20baseline.ipynb)
+   * **Notebook:** [NanoLILY.ipynb](https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/NanoLILY%20baseline.ipynb)
    * The model was trained from scratch for 200 epochs on the standard LoL v1 dataset to learn the fundamental mapping between low-light degradation and target illumination.
    * **Dynamic Loss Strategy:** SSIM weight was intentionally kept low (`0.01`) for the first 50 epochs to focus strictly on pixel-level illumination recovery (PSNR/L1). At epoch 51, the weight was scaled up 20x to `0.20` to refine structural edges and focus on perceptual quality once the baseline brightness was achieved.
 
 2. **Phase 2: Fine-Tuning & Adaptation (LoL v2 Real_captured Dataset)**
-   * **Notebook:**(https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/Fine%20tuning%20NanoLILY.ipynb) 
+   * **Notebook:** [Fine tuning NanoLILY.ipynb](https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/Fine%20tuning%20NanoLILY.ipynb)
    * The pre-trained baseline was fine-tuned on the LoL v2 dataset to adapt to its specific noise profiles and distribution shifts.
    * **Refined Optimization:** The SSIM weight was strictly maintained at `0.2` from epoch 0. The learning rate was managed via a `ReduceLROnPlateau` scheduler, and training was monitored with an Early Stopping callback (patience=10, min_delta=0.00001) targeting maximum `val_ssim`.
 
@@ -58,9 +59,8 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 
 ---
 
-## Results
-
----
+## Visual Results
+Below are a few sample outputs demonstrating the model's ability to recover illumination and structure.
 
 ### low00730
 
@@ -70,102 +70,104 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 
 ### low00731
 
-![eval_low00731.png](sample-wise-evaluation/eval_low00731.png)
+![eval_low00731.png](results/sample-wise-evaluation/eval_low00731.png)
 
 ---
 
 ### low00734
 
-![eval_low00734.png](sample-wise-evaluation/eval_low00734.png)
+![eval_low00734.png](results/sample-wise-evaluation/eval_low00734.png)
 
 ---
 
 ### low00736
 
-![eval_low00736.png](sample-wise-evaluation/eval_low00736.png)
+![eval_low00736.png](results/sample-wise-evaluation/eval_low00736.png)
 
 ---
 
 ### low00738
 
-![eval_low00738.png](sample-wise-evaluation/eval_low00738.png)
+![eval_low00738.png](results/sample-wise-evaluation/eval_low00738.png)
 
 ---
 
 ### low00740
 
-![eval_low00740.png](sample-wise-evaluation/eval_low00740.png)
+![eval_low00740.png](results/sample-wise-evaluation/eval_low00740.png)
 
 ---
 
 ### low00742
 
-![eval_low00742.png](sample-wise-evaluation/eval_low00742.png)
+![eval_low00742.png](results/sample-wise-evaluation/eval_low00742.png)
 
 ---
 
 ### low00744
 
-![eval_low00744.png](sample-wise-evaluation/eval_low00744.png)
+![eval_low00744.png](results/sample-wise-evaluation/eval_low00744.png)
 
 ---
 
 ### low00746
 
-![eval_low00746.png](sample-wise-evaluation/eval_low00746.png)
+![eval_low00746.png](results/sample-wise-evaluation/eval_low00746.png)
 
 ---
 
 ### low00748
 
-![eval_low00748.png](sample-wise-evaluation/eval_low00748.png)
+![eval_low00748.png](results/sample-wise-evaluation/eval_low00748.png)
 
 ---
 
 ### low00750
 
-![eval_low00750.png](sample-wise-evaluation/eval_low00750.png)
+![eval_low00750.png](results/sample-wise-evaluation/eval_low00750.png)
 
 ---
 
 ### low00752
 
-![eval_low00752.png](sample-wise-evaluation/eval_low00752.png)
+![eval_low00752.png](results/sample-wise-evaluation/eval_low00752.png)
 
 ---
 
 ### low00756
 
-![eval_low00756.png](sample-wise-evaluation/eval_low00756.png)
+![eval_low00756.png](results/sample-wise-evaluation/eval_low00756.png)
 
 ---
 
 ### low00758
 
-![eval_low00758.png](sample-wise-evaluation/eval_low00758.png)
+![eval_low00758.png](results/sample-wise-evaluation/eval_low00758.png)
 
 ---
 
 ### low00760
 
-![eval_low00760.png](sample-wise-evaluation/eval_low00760.png)
+![eval_low00760.png](results/sample-wise-evaluation/eval_low00760.png)
 
 ---
 
 ### low00762
 
-![eval_low00762.png](sample-wise-evaluation/eval_low00762.png)
+![eval_low00762.png](results/sample-wise-evaluation/eval_low00762.png)
 
 ---
 
 ### low00764
 
-![eval_low00764.png](sample-wise-evaluation/eval_low00764.png)
+![eval_low00764.png](results/sample-wise-evaluation/eval_low00764.png)
 
 ---
 
 ### low00765
 
-![eval_low00765.png](sample-wise-evaluation/eval_low00765.png)
+![eval_low00765.png](results/sample-wise-evaluation/eval_low00765.png)
 
 ---
+
+[➡️ Click Here to View the Full Gallery of 40+ Evaluation Samples](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/all-results.md)
