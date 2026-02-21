@@ -16,6 +16,19 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 * **Perceptual Optimization:** Trained using a composite loss function blending VGG-19 Perceptual Loss, Structural Similarity (SSIM), and L1 Pixel loss to ensure outputs are both structurally sound and visually pleasing.
 
 ---
+## Repository Structure
+
+```text
+NanoLILY/
+├── dataset/            # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
+├── notebook/           # Core code: Pre-training and fine-tuning Jupyter notebooks
+├── model/              # Saved PyTorch checkpoints (.pth)
+├── results/            # Visual comparisons (Before/After/Ground Truth)
+├── other docs/         # Deep-dive documentation (Architecture maps, training logs)
+├── README.md           # Project overview and quickstart
+└── requirements.txt    # Python dependencies
+```
+---
 
 ## 🧠 Training Strategy: Two-Stage Pipeline
 To maximize the model's ability to generalize across different low-light conditions, the training was executed in a two-phase pipeline:
@@ -43,17 +56,114 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 
 ---
 
-## Repository Structure
+## Results
 
-```text
-NanoLILY/
-├── dataset/            # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
-├── notebook/           # Core code: Pre-training and fine-tuning Jupyter notebooks
-├── model/              # Saved PyTorch checkpoints (.pth)
-├── results/            # Visual comparisons (Before/After/Ground Truth)
-├── other docs/         # Deep-dive documentation (Architecture maps, training logs)
-├── README.md           # Project overview and quickstart
-└── requirements.txt    # Python dependencies
-```
 ---
 
+### low00730
+
+![eval_low00730.png](sample-wise-evaluation/eval_low00730.png)
+
+---
+
+### low00731
+
+![eval_low00731.png](sample-wise-evaluation/eval_low00731.png)
+
+---
+
+### low00734
+
+![eval_low00734.png](sample-wise-evaluation/eval_low00734.png)
+
+---
+
+### low00736
+
+![eval_low00736.png](sample-wise-evaluation/eval_low00736.png)
+
+---
+
+### low00738
+
+![eval_low00738.png](sample-wise-evaluation/eval_low00738.png)
+
+---
+
+### low00740
+
+![eval_low00740.png](sample-wise-evaluation/eval_low00740.png)
+
+---
+
+### low00742
+
+![eval_low00742.png](sample-wise-evaluation/eval_low00742.png)
+
+---
+
+### low00744
+
+![eval_low00744.png](sample-wise-evaluation/eval_low00744.png)
+
+---
+
+### low00746
+
+![eval_low00746.png](sample-wise-evaluation/eval_low00746.png)
+
+---
+
+### low00748
+
+![eval_low00748.png](sample-wise-evaluation/eval_low00748.png)
+
+---
+
+### low00750
+
+![eval_low00750.png](sample-wise-evaluation/eval_low00750.png)
+
+---
+
+### low00752
+
+![eval_low00752.png](sample-wise-evaluation/eval_low00752.png)
+
+---
+
+### low00756
+
+![eval_low00756.png](sample-wise-evaluation/eval_low00756.png)
+
+---
+
+### low00758
+
+![eval_low00758.png](sample-wise-evaluation/eval_low00758.png)
+
+---
+
+### low00760
+
+![eval_low00760.png](sample-wise-evaluation/eval_low00760.png)
+
+---
+
+### low00762
+
+![eval_low00762.png](sample-wise-evaluation/eval_low00762.png)
+
+---
+
+### low00764
+
+![eval_low00764.png](sample-wise-evaluation/eval_low00764.png)
+
+---
+
+### low00765
+
+![eval_low00765.png](sample-wise-evaluation/eval_low00765.png)
+
+---
