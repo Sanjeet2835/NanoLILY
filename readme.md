@@ -18,16 +18,16 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 ---
 ## Repository Structure
 
-```text
 NanoLILY/
-├── dataset/            # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
-├── notebook/           # Core code: Pre-training and fine-tuning Jupyter notebooks
-├── model/              # Saved PyTorch checkpoints (.pth)
-├── results/            # Visual comparisons (Before/After/Ground Truth)
-├── other docs/         # Deep-dive documentation (Architecture maps, training logs)
-├── README.md           # Project overview and quickstart
-└── requirements.txt    # Python dependencies
-```
+├── dataset/                     # Training and validation datasets (LoL v1 & LoL v2 Real_captured)
+├── notebooks/                   # Core code: Pre-training, fine-tuning, and inference Jupyter notebooks
+├── model/                       # Saved PyTorch Lightning checkpoints (.ckpt / .pth)
+├── results/                     # Visual evaluations and metrics
+│   ├── sample-wise-evaluation/  # 40+ generated Before/After/Ground Truth image grids
+│   └── all-results.md           # Compilation of all Before/After/Ground Truth image grids in one file
+├── docs/                        # Deep-dive documentation (Architecture maps, training logs)
+├── README.md                    # Project overview, 129K parameter specs, and quickstart
+└── requirements.txt             # Python dependencies
 ---
 
 ## 🧠 Training Strategy: Two-Stage Pipeline
