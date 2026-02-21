@@ -21,7 +21,7 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 To maximize the model's ability to generalize across different low-light conditions, the training was executed in a two-phase pipeline:
 
 1. **Phase 1: Baseline Pre-Training (LoL v1 Dataset)**
-   * **Notebook:** `[yet to be added](https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/Fine%20tuning%20NanoLILY.ipynb)`
+   * **Notebook:** (https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/Fine%20tuning%20NanoLILY.ipynb)
    * The model was trained from scratch for 200 epochs on the standard LoL v1 dataset to learn the fundamental mapping between low-light degradation and target illumination.
    * **Dynamic Loss Strategy:** SSIM weight was intentionally kept low (`0.01`) for the first 50 epochs to focus strictly on pixel-level illumination recovery (PSNR/L1). At epoch 51, the weight was scaled up 20x to `0.20` to refine structural edges and focus on perceptual quality once the baseline brightness was achieved.
 
