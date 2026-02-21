@@ -2,7 +2,7 @@
 
 > A highly efficient dual-branch CNN-FFT architecture for restoring structural integrity and perceptual quality in low-light images with minimal parameter overhead.
 
-<img width="923" height="435" alt="image" src="https://github.com/user-attachments/assets/5f4d72f8-0aa6-49f3-97fc-dc985156ba88" />
+<<img width="976" height="506" alt="image" src="https://github.com/user-attachments/assets/5b057cf9-d2eb-4d52-99f4-69f95bbddd39" />/>
 
 
 ## Overview
