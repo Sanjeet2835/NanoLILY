@@ -62,39 +62,10 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 ## Visual Results
 Below are a few sample outputs demonstrating the model's ability to recover illumination and structure.
 
-### low00730
-
-![eval_low00730.png](results/sample-wise-evaluation/eval_low00730.png)
-
----
-
-### low00731
-
-![eval_low00731.png](results/sample-wise-evaluation/eval_low00731.png)
-
----
-
-### low00734
-
-![eval_low00734.png](results/sample-wise-evaluation/eval_low00734.png)
-
----
 
 ### low00736
 
 ![eval_low00736.png](results/sample-wise-evaluation/eval_low00736.png)
-
----
-
-### low00738
-
-![eval_low00738.png](results/sample-wise-evaluation/eval_low00738.png)
-
----
-
-### low00740
-
-![eval_low00740.png](results/sample-wise-evaluation/eval_low00740.png)
 
 ---
 
@@ -104,33 +75,9 @@ Below are a few sample outputs demonstrating the model's ability to recover illu
 
 ---
 
-### low00744
-
-![eval_low00744.png](results/sample-wise-evaluation/eval_low00744.png)
-
----
-
-### low00746
-
-![eval_low00746.png](results/sample-wise-evaluation/eval_low00746.png)
-
----
-
 ### low00748
 
 ![eval_low00748.png](results/sample-wise-evaluation/eval_low00748.png)
-
----
-
-### low00750
-
-![eval_low00750.png](results/sample-wise-evaluation/eval_low00750.png)
-
----
-
-### low00752
-
-![eval_low00752.png](results/sample-wise-evaluation/eval_low00752.png)
 
 ---
 
@@ -146,28 +93,6 @@ Below are a few sample outputs demonstrating the model's ability to recover illu
 
 ---
 
-### low00760
 
-![eval_low00760.png](results/sample-wise-evaluation/eval_low00760.png)
-
----
-
-### low00762
-
-![eval_low00762.png](results/sample-wise-evaluation/eval_low00762.png)
-
----
-
-### low00764
-
-![eval_low00764.png](results/sample-wise-evaluation/eval_low00764.png)
-
----
-
-### low00765
-
-![eval_low00765.png](results/sample-wise-evaluation/eval_low00765.png)
-
----
 
 [➡️ Click Here to View the Full Gallery of 40+ Evaluation Samples](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/all-results.md)
