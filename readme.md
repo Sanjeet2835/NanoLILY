@@ -2,8 +2,8 @@
 
 > A highly efficient dual-branch CNN-FFT architecture for restoring structural integrity and perceptual quality in low-light images with minimal parameter overhead.
 
-![Hero Image Placeholder](results/hero_comparison.png) 
-*(Before / Model Output / Ground Truth comparison image here is yet to be placed)*
+<img width="923" height="435" alt="image" src="https://github.com/user-attachments/assets/5f4d72f8-0aa6-49f3-97fc-dc985156ba88" />
+
 
 ## Overview
 This repository contains an independent deep learning experiment focused on architectural efficiency in computer vision. **NanoLILY** tackles the problem of low-light image enhancement not by scaling up massive transformer blocks, but by combining a microscopic spatial CNN with a globally learnable Fast Fourier Transform (FFT) mask. 
@@ -21,7 +21,7 @@ Operating at just **129K trainable parameters**, this architecture bypasses the 
 To maximize the model's ability to generalize across different low-light conditions, the training was executed in a two-phase pipeline:
 
 1. **Phase 1: Baseline Pre-Training (LoL v1 Dataset)**
-   * **Notebook:** https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/NanoLILY%20baseline.ipynb
+   * **Notebook:** (https://github.com/Sanjeet2835/NanoLILY/blob/main/notebook/NanoLILY%20baseline.ipynb)
    * The model was trained from scratch for 200 epochs on the standard LoL v1 dataset to learn the fundamental mapping between low-light degradation and target illumination.
    * **Dynamic Loss Strategy:** SSIM weight was intentionally kept low (`0.01`) for the first 50 epochs to focus strictly on pixel-level illumination recovery (PSNR/L1). At epoch 51, the weight was scaled up 20x to `0.20` to refine structural edges and focus on perceptual quality once the baseline brightness was achieved.
 
