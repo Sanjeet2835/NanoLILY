@@ -1,4 +1,4 @@
-# NanoLILY: Ultra-Lightweight CNN-FFT Fusion for Low-Light Image Luminosity Yield
+# NanoLILY: Ultra-Lightweight Model for Low-Light Image Luminosity Yield
 
 > A highly efficient dual-branch CNN-FFT architecture for restoring structural integrity and perceptual quality in low-light images with minimal parameter overhead.
 
