@@ -24,7 +24,7 @@ This document contains the automated batch evaluation of the test dataset, compa
 
 ### low00695
 
-![eval_low00694.png](..assets/model_evaluation/teddybear.png)
+![eval_low00694.png](../assets/model_evaluation/teddybear.png)
 
 ---
 
