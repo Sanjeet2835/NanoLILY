@@ -4,6 +4,37 @@
 
 <img width="989" height="679" alt="hero_image" src="https://github.com/user-attachments/assets/01551f6a-a824-4c87-b376-ee39b9d59872" />
 
+## 📂 Repository Structure (How to Navigate)
+
+```text
+NanoLILY/
+├── assets/                      # High-res output images and failure analysis grids
+├── checkpoints/                 # Best PyTorch Lightning model weights
+├── notebooks/                   # Training notebooks (Pre-training & Fine-tuning)
+├── results/                     # Markdown galleries
+│   ├── all-results.md           # Standard benchmark evaluations (NanoLILY Core)
+│   ├── real-world-gallery.md    # High-resolution stress tests (LILY Bloom Engine)
+│   └── failure_analysis.md      # HDR limitations and roadmap
+├── demo.ipynb                   # ⚡ Plug-and-play interactive inference notebook
+├── requirements-inference.txt   # Lightweight dependencies for running the demo
+└── requirements-training.txt    # Heavy dependencies (MLflow, Lightning) for training
+```
+
+## 🚀 Getting Started (Quickstart)
+
+Want to test the NanoLILY Core and LILY Bloom Engine on your own images? The fastest way is to use our interactive demo.
+
+1. **Clone the repository:**
+   ```
+   git clone [https://github.com/Sanjeet2835/NanoLILY.git](https://github.com/Sanjeet2835/NanoLILY.git)
+   cd NanoLILY
+   ```
+2. **Install the lightweight inference dependencies:**
+   ```
+   pip install -r requirements-inference.txt
+   ```
+3. **Run the Demo:** Open demo.ipynb, set your image path in the User Control Panel, and run the cells to instantly visualize the 3-way comparison (Input vs. Core vs. Bloom Engine).
+  
 ## 🌸 System Architecture: Two Pillars
 This repository tackles the problem of low-light image enhancement through two distinct engineering focuses: the mathematical core that learns the illumination mapping, and the deployment system that scales it.
 
@@ -17,25 +48,6 @@ NanoLILY achieves competitive structural recovery on low-light datasets not by s
 Because global FFT masks are mathematically locked to their training resolution (224x224), passing arbitrary 1080p/4K images directly into NanoLILY causes tensor shape mismatches. **LILY Bloom** is the inference pipeline built to solve this.
 * **Resolution Independence:** LILY Bloom uses a sliding-window algorithm to slice arbitrary high-resolution images into overlapping patches, processing each through the NanoLILY core natively.
 * **Seamless Blending:** To prevent the visible "checkerboard" seams caused by global frequency shifts between adjacent patches, LILY Bloom applies a mathematical **2D Hanning Window** to each output tensor. This forces the edges of every patch to smoothly fade to 0% opacity, allowing them to blend perfectly into a massive, uninterrupted high-resolution output.
-
----
-
-## 📂 Repository Structure
-
-```
-NanoLILY/
-├── dataset/                     # Training and validation datasets (LoL v1 & LoL v2)
-├── notebooks/                   # Core code: Pre-training, fine-tuning, and inference
-├── model/                       # Saved PyTorch Lightning checkpoints (.ckpt / .pth)
-├── results/                     # Visual evaluations and metrics
-│   ├── sample-wise-evaluation/  # 40+ generated Before/After/Target grids
-│   └── all-results.md           # Scrollable markdown gallery of all test samples
-├── docs/                        # Deep-dive documentation (Architecture maps, logs)
-├── README.md                    # Project overview and quickstart
-├── GETTING_STARTED.md           # Installation, dataset setup, and usage instructions
-└── requirements.txt             # Python dependencies
-
-```
 
 ---
 
