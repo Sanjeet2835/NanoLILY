@@ -81,8 +81,18 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 ---
 
 ## Visual Results
-Below are a few sample outputs demonstrating the model's ability to recover illumination and structure.
 
+### 1. High-Resolution Deployment (LILY Bloom Engine)
+By utilizing the sliding-window Hanning inference, the system can process massive arbitrary images without memory crashes or visible seams.
+*(Left: Raw Input | Right: LILY Bloom Engine)*
+
+![Forest High-Res Comparison](assets/bloom_engine_gallery/grid_forest.jpg)
+
+[➡️ Click Here to view the Real-World Stress Test Gallery](results/real-world-gallery.md)
+
+### 2. Standard Benchmark Recovery (NanoLILY Core)
+On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly efficient structural recovery.
+*(Images: Input / NanoLILY / Target)*
 
 ### low00736
 
@@ -117,12 +127,11 @@ Below are a few sample outputs demonstrating the model's ability to recover illu
 
 [➡️ Click Here to View the Full Gallery of 40+ Evaluation Samples](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/all-results.md)
 
-
+---
 
 ## 🔮 Known Limitations & Future Scope
 
-* **Mitigating OOD Sensor Noise:** Currently, aggressively amplifying out-of-distribution (OOD) dark images amplifies baseline sensor noise (e.g., green grain on homogeneous surfaces like walls, due to camera Bayer filter physics). Future training iterations will incorporate a **Total Variation (TV) Loss** penalty alongside SSIM/L1 to naturally smooth flat spatial regions without requiring post-processing DSP filters.
+* **Mitigating OOD Sensor Noise:** Aggressively amplifying out-of-distribution (OOD) dark images amplifies baseline sensor noise. Future iterations will incorporate a **Total Variation (TV) Loss** penalty alongside SSIM/L1 to naturally smooth flat spatial regions.
+* **Non-Uniform Illumination (HDR/Point Lights):** As documented in our [Failure Analysis](results/failure_analysis.md), the system currently struggles with intense, localized light sources (like streetlamps) due to a lack of HDR awareness. Future architectural updates will focus on disentangled illumination learning and global photometric normalization to prevent localized saturation.
 
 ---
-
-**🛠️ Want to run the code? Check out the [Getting Started Guide]() for installation and inference instructions.**
