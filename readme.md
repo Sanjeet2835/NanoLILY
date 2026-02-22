@@ -27,8 +27,8 @@ NanoLILY/
 │
 ├── demo.ipynb                             # Plug-and-play inference demo
 ├── readme.md                              # Project overview and usage
-├── requirements-inference.txt.txt         # Minimal dependencies for inference
-└── requirements-training.txt.txt          # Full training dependencies
+├── requirements-inference.txt             # Minimal dependencies for inference
+└── requirements-training.txt              # Full training dependencies
 ```
 
 ## 🚀 Getting Started (Quickstart)
