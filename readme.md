@@ -111,11 +111,6 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 
 ![eval_low00736.png](assets/model_evaluation/eval_low00736.png)
 
----
-
-### low00742
-
-![eval_low00742.png](assets/model_evaluation/eval_low00742.png)
 
 ---
 
@@ -123,11 +118,6 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 
 ![eval_low00748.png](assets/model_evaluation/eval_low00748.png)
 
----
-
-### low00756
-
-![eval_low00756.png](assets/model_evaluation/eval_low00756.png)
 
 ---
 
