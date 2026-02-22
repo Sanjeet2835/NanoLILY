@@ -86,9 +86,11 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 By utilizing the sliding-window Hanning inference, the system can process massive arbitrary images without memory crashes or visible seams.
 *(Left: Raw Input | Right: LILY Bloom Engine)*
 
-![Forest High-Res Comparison](assets/bloom_engine_gallery/grid_forest.jpg)
+![Comparison](../assets/bloom_engine_gallery/grid_lowlight.jpg)
 
-[➡️ Click Here to view the Real-World Stress Test Gallery](results/real-world-gallery.md)
+![Comparison](../assets/bloom_engine_gallery/grid_0_c4NxOzlm9w2CLv41.jpg)
+
+[➡️ Click Here to view the Real-World Stress Test Gallery](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/LILY%20Bloom%20Engine%20stress%20test.md)
 
 ### 2. Standard Benchmark Recovery (NanoLILY Core)
 On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly efficient structural recovery.
@@ -125,7 +127,7 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 ---
 
 
-[➡️ Click Here to View the Full Gallery of 40+ Evaluation Samples](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/all-results.md)
+[➡️ Click Here to View the Full Gallery of 40+ Evaluation Samples](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/NanoLILY%20results%20visualization.md)
 
 ---
 
