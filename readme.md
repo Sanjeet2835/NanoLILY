@@ -8,16 +8,27 @@
 
 ```text
 NanoLILY/
-├── assets/                      # High-res output images and failure analysis grids
-├── checkpoints/                 # Best PyTorch Lightning model weights
-├── notebooks/                   # Training notebooks (Pre-training & Fine-tuning)
-├── results/                     # Markdown galleries
-│   ├── all-results.md           # Standard benchmark evaluations (NanoLILY Core)
-│   ├── real-world-gallery.md    # High-resolution stress tests (LILY Bloom Engine)
-│   └── failure_analysis.md      # HDR limitations and roadmap
-├── demo.ipynb                   # ⚡ Plug-and-play interactive inference notebook
-├── requirements-inference.txt   # Lightweight dependencies for running the demo
-└── requirements-training.txt    # Heavy dependencies (MLflow, Lightning) for training
+├── assets/
+│   ├── bloom_engine_gallery/              # LILY Bloom Engine visual outputs
+│   ├── failure_cases_images/              # Failure-case and limitation samples
+│   └── model_evaluation/                  # Evaluation visuals and comparisons
+│
+├── docs/
+│   └── architecture.md                    # Model architecture and design decisions
+│
+├── notebook/
+│   ├── NanoLILY_baseline.ipynb            # Baseline training & experiments
+│   └── Fine_tuning_NanoLILY.ipynb         # Fine-tuning experiments
+│
+├── results/
+│   ├── LILY_Bloom_Engine_stress_test.md   # Real-world stress tests & observations                                
+│   └── NanoLILY_results_visualization.md  # Quantitative + qualitative result analysis
+│                                      
+│
+├── demo.ipynb                             # Plug-and-play inference demo
+├── readme.md                              # Project overview and usage
+├── requirements-inference.txt.txt         # Minimal dependencies for inference
+└── requirements-training.txt.txt          # Full training dependencies
 ```
 
 ## 🚀 Getting Started (Quickstart)
