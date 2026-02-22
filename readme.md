@@ -86,9 +86,9 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 By utilizing the sliding-window Hanning inference, the system can process massive arbitrary images without memory crashes or visible seams.
 *(Left: Raw Input | Right: LILY Bloom Engine)*
 
-![Comparison](../assets/bloom_engine_gallery/grid_lowlight.jpg)
+![Comparison](/assets/bloom_engine_gallery/grid_lowlight.jpg)
 
-![Comparison](../assets/bloom_engine_gallery/grid_0_c4NxOzlm9w2CLv41.jpg)
+![Comparison](/assets/bloom_engine_gallery/grid_0_c4NxOzlm9w2CLv41.jpg)
 
 [➡️ Click Here to view the Real-World Stress Test Gallery](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/LILY%20Bloom%20Engine%20stress%20test.md)
 
