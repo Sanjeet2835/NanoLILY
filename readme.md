@@ -2,7 +2,7 @@
 
 > A complete computer vision pipeline featuring a 129K-parameter CNN-FFT core model (NanoLILY) paired with a seamless 2D-Hanning inference engine (LILY Bloom) to restore illumination in arbitrary high-resolution images.
 
-<img width="1186" height="690" alt="hero_image" src="https://github.com/user-attachments/assets/0b0b26e5-3611-4d8b-92f3-e5f6d97c12e4" />
+<img width="989" height="679" alt="hero_image" src="https://github.com/user-attachments/assets/01551f6a-a824-4c87-b376-ee39b9d59872" />
 
 ## 🌸 System Architecture: Two Pillars
 This repository tackles the problem of low-light image enhancement through two distinct engineering focuses: the mathematical core that learns the illumination mapping, and the deployment system that scales it.
