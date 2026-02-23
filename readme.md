@@ -46,11 +46,18 @@ Want to test the NanoLILY Core and LILY Bloom Engine on your own images? The fas
    git clone https://github.com/Sanjeet2835/NanoLILY.git
    cd NanoLILY
    ```
-2. **Install the lightweight inference dependencies:**
+   OR
+   **Only download the demo.ipynb and requirements-demo.txt**
+   
+2. **Install the lightweight demo dependencies:**
    ```
-   pip install -r requirements-inference.txt
+   pip install -r requirements-demo.txt
    ```
-3. **Run the Demo:** Open demo.ipynb, set your image path in the User Control Panel, and run the cells to instantly visualize the 3-way comparison (Input vs. Core vs. Bloom Engine).
+   
+3. **Download the NanoLILY model**:
+   Download NanoLILY model from kaggle: [NanoLILY](https://www.kaggle.com/models/sanjeet2824/nanolily)
+   
+4. **Run the Demo:** Open demo.ipynb, set your image path and model path in the User Control Panel, and run the cells to instantly visualize the 3-way comparison (Input vs. Core vs. Bloom Engine).
   
 ## 🌸 System Architecture: Two Pillars
 This repository tackles the problem of low-light image enhancement through two distinct engineering focuses: the mathematical core that learns the illumination mapping, and the deployment system that scales it.
