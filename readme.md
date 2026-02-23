@@ -133,6 +133,6 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 ## 🔮 Known Limitations & Future Scope
 
 * **Mitigating OOD Sensor Noise:** Aggressively amplifying out-of-distribution (OOD) dark images amplifies baseline sensor noise. Future iterations will incorporate a **Total Variation (TV) Loss** penalty alongside SSIM/L1 to naturally smooth flat spatial regions.
-* **Non-Uniform Illumination (HDR/Point Lights):** As documented in our [Failure Analysis](results/failure_analysis.md), the system currently struggles with intense, localized light sources (like streetlamps) due to a lack of HDR awareness. Future architectural updates will focus on disentangled illumination learning and global photometric normalization to prevent localized saturation.
+* **Non-Uniform Illumination (HDR/Point Lights):** As documented in our [Failure Analysis](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/failure_cases.md), the system currently struggles with intense, localized light sources (like streetlamps) due to a lack of HDR awareness. Future architectural updates will focus on disentangled illumination learning and global photometric normalization to prevent localized saturation.
 
 ---
