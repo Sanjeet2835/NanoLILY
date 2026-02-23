@@ -43,7 +43,7 @@ Want to test the NanoLILY Core and LILY Bloom Engine on your own images? The fas
 
 1. **Clone the repository:**
    ```
-   git clone [https://github.com/Sanjeet2835/NanoLILY.git](https://github.com/Sanjeet2835/NanoLILY.git)
+   git clone https://github.com/Sanjeet2835/NanoLILY.git
    cd NanoLILY
    ```
 2. **Install the lightweight inference dependencies:**
