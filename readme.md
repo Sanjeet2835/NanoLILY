@@ -13,8 +13,14 @@ NanoLILY/
 │   ├── failure_cases_images/              # Failure-case and limitation samples
 │   └── model_evaluation/                  # Evaluation visuals and comparisons
 │
+├── dataset/
+│   ├── dataset.md                         # links to LoL v1 and LoL v2 dataset  
+│
 ├── docs/
 │   └── architecture.md                    # Model architecture and design decisions
+│
+├── model/
+│   └── NanoLILY.md                        # Link of pre-trained weights for NanoLILY hosted on Kaggle
 │
 ├── notebook/
 │   ├── NanoLILY_baseline.ipynb            # Baseline training & experiments
