@@ -33,7 +33,7 @@ NanoLILY/
 │
 ├── demo.ipynb                             # Plug-and-play inference demo
 ├── readme.md                              # Project overview and usage
-├── requirements-inference.txt             # Minimal dependencies for inference
+├── requirements-demo.txt                  # Dependencies for demo notebook
 └── requirements-training.txt              # Full training dependencies
 ```
 
