@@ -1,6 +1,6 @@
 # NanoLILY & LILY Bloom: Ultra-Lightweight Low-Light Image Enhancement System
 
-> A complete computer vision pipeline featuring a 129K-parameter CNN-FFT core model (NanoLILY) paired with a seamless 2D-Hanning inference engine (LILY Bloom) to restore illumination in arbitrary high-resolution images.
+> A complete computer vision pipeline featuring a 129K-parameter UNet-FFT core model (NanoLILY) paired with a seamless 2D-Hanning inference engine (LILY Bloom) to restore illumination in arbitrary high-resolution images.
 
 <img width="989" height="679" alt="hero_image" src="https://github.com/user-attachments/assets/01551f6a-a824-4c87-b376-ee39b9d59872" />
 
