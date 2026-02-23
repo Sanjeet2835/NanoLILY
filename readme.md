@@ -130,9 +130,25 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 
 ---
 
-## 🔮 Known Limitations & Future Scope
 
-* **Mitigating OOD Sensor Noise:** Aggressively amplifying out-of-distribution (OOD) dark images amplifies baseline sensor noise. Future iterations will incorporate a **Total Variation (TV) Loss** penalty alongside SSIM/L1 to naturally smooth flat spatial regions.
-* **Non-Uniform Illumination (HDR/Point Lights):** As documented in [Failure Cases](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/failure_cases.md), the system currently struggles with intense, localized light sources (like streetlamps) due to a lack of HDR awareness. Future architectural updates will focus on disentangled illumination learning and global photometric normalization to prevent localized saturation.
+## 🚧 Current Limitations (NanoLILY v1)
 
----
+NanoLILY v1 successfully proves that a microscopic (129K parameter) hybrid network can achieve professional-grade low-light enhancement. However, real-world stress testing has revealed a few distinct architectural boundaries that will be addressed in v2:
+
+### 1. The HDR Saturation Problem (Blown-out Highlights)
+* **The Issue:** When an image has a pitch-black background but intense, localized light sources (like a streetlamp or neon sign), the model tends to "blow them out," resulting in pure white clipping. 
+* **The Cause:** The Global FFT branch calculates a global brightness shift for the image. Because it lacks local exposure awareness, it uniformly lifts the brightness of already-illuminated pixels along with the shadows.
+
+### 2. The "Fake Global" Paradox in High-Res Upscaling
+* **The Issue:** When enhancing massive 4K images, large continuous areas (like a dark night sky) can occasionally exhibit slightly uneven lighting across different zones.
+* **The Cause:** The LILY Bloom engine slices images into 224x224 patches. Consequently, the FFT branch is only calculating the "global" illumination of that specific patch, not the contextual lighting of the entire 4K image.
+
+### 3. Sensor Noise Amplification
+* **The Issue:** When processing extreme low-light photos from real-world smartphone sensors, the model occasionally amplifies ISO grain and color static on flat surfaces (like dark walls).
+* **The Cause:** The spatial U-Net branch is highly sensitive to microscopic high-frequency changes and can mistake raw sensor noise for physical texture, enhancing the static instead of smoothing it.
+
+### 4. Color Constancy Shifts
+* **The Issue:** The enhanced outputs occasionally suffer from unnatural color casts (e.g., overly warm/yellow or cool/blue tints), subtly altering the original atmosphere of the scene.
+* **The Cause:** The current L1 and VGG Perceptual losses operate purely in the RGB color space. They mathematically prioritize structural recovery and average pixel intensity over strict hue preservation.
+
+You can checkout [Failure Cases](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/failure_cases.md)
