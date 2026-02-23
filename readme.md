@@ -54,7 +54,8 @@ Want to test the NanoLILY Core and LILY Bloom Engine on your own images? The fas
    pip install -r requirements-demo.txt
    ```
    
-3. **Download the NanoLILY model from kaggle**: https://www.kaggle.com/models/sanjeet2824/nanolily
+3. **Download the NanoLILY model from kaggle**:
+   https://www.kaggle.com/models/sanjeet2824/nanolily
    
 4. **Run the Demo:** Open demo.ipynb, set your image path and model path in the User Control Panel, and run the cells to instantly visualize the 3-way comparison (Input vs. Core vs. Bloom Engine).
   
