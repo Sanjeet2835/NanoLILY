@@ -69,7 +69,7 @@ NanoLILY achieves competitive structural recovery on low-light datasets not by s
 * **Perceptual Optimization:** Trained using a composite loss function blending VGG-19 Perceptual Loss, Structural Similarity (SSIM), and L1 Pixel loss to ensure outputs are structurally sound.
 
 ### Pillar II: The Inference Engine (LILY Bloom)
-Because global FFT masks are mathematically locked to their training resolution (224x224), passing arbitrary 1080p/4K images directly into NanoLILY causes tensor shape mismatches. **LILY Bloom** is the inference pipeline built to solve this.
+Because global FFT masks are mathematically locked to their training resolution (224x224), passing high-res images directly into NanoLILY causes tensor shape mismatches, while simply downsampling them to 224x224 before input destroys high-frequency detail. LILY Bloom is the inference pipeline built to solve this by slicing high-res images into native patches and seamlessly blending them back together.
 * **Resolution Independence:** LILY Bloom uses a sliding-window algorithm to slice arbitrary high-resolution images into overlapping patches, processing each through the NanoLILY core natively.
 * **Seamless Blending:** To prevent the visible "checkerboard" seams caused by global frequency shifts between adjacent patches, LILY Bloom applies a mathematical **2D Hanning Window** to each output tensor. This forces the edges of every patch to smoothly fade to 0% opacity, allowing them to blend perfectly into a massive, uninterrupted high-resolution output.
 
