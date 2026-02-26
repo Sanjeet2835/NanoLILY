@@ -28,9 +28,9 @@ NanoLILY/
 │
 ├── results/
 │   └── Evaluation.ipynb                   # Notebook for evaluation results
-│   └── failure_cases.md                   # Failure cases images    
 │   ├── LILY_Bloom_Engine_stress_test.md   # Real-world stress tests & observations                                
-│   └── NanoLILY_results_visualization.md  # Quantitative + qualitative result analysis     
+│   └── NanoLILY_results_visualization.md  # Quantitative + qualitative result analysis
+│   └── failure_cases.md                   # Failure cases images     
 │
 ├── demo.ipynb                             # Plug-and-play inference demo
 ├── readme.md                              # Project overview and usage
