@@ -105,9 +105,6 @@ Evaluation yields highly efficient structural recovery relative to the minimal p
 * **FFT Frequency Loss:** 0.017
 * **Color Loss:** 0.016
 
-### 🔍 Evaluation Methodology: Precision Benchmarking
-To guarantee the highest level of mathematical accuracy, all final metrics reported above were calculated using a strict, standalone evaluation script in pure `32-bit float` precision.
-
 ### 📖 Metrics Legend (How to Read These Scores)
 Not all deep learning metrics operate on a 0-to-1 percentage scale. Here is a quick guide to understanding the NanoLILY evaluation scores:
 
@@ -121,6 +118,9 @@ Not all deep learning metrics operate on a 0-to-1 percentage scale. Here is a qu
 
 * **The Logarithmic Metric:**
   * **PSNR (19.19 dB):** Peak Signal-to-Noise Ratio is measured in decibels. For an ultra-lightweight 129K parameter model tackling extreme low-light degradation, approaching 20 dB represents a highly competitive signal recovery with minimal artifact generation.
+
+### 🔍 Evaluation Methodology: Precision Benchmarking
+To guarantee the highest level of mathematical accuracy, all final metrics reported above were calculated using a strict, standalone evaluation script in pure `32-bit float` precision.
 
 ---
 
