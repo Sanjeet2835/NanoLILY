@@ -148,7 +148,7 @@ On the standard LoL Dataset benchmarks, the 129K-parameter core achieves highly 
 
 ## 🚧 Current Limitations (NanoLILY v1)
 
-NanoLILY v1 successfully proves that a microscopic (129K parameter) hybrid network can achieve professional-grade low-light enhancement. However, real-world stress testing has revealed a few distinct architectural boundaries that will be addressed in v2:
+NanoLILY v1 successfully proves that a microscopic (129K parameter) hybrid network can achieve professional-grade low-light enhancement. However, real-world stress testing has revealed a few distinct architectural boundaries:
 
 ### 1. The HDR Saturation Problem (Blown-out Highlights)
 * **The Issue:** When an image has a pitch-black background but intense, localized light sources (like a streetlamp or neon sign), the model tends to "blow them out," resulting in pure white clipping. 
