@@ -97,9 +97,9 @@ To maximize the model's ability to generalize across different low-light conditi
 
 Evaluation yields highly efficient structural recovery relative to the minimal parameter count:
 
-* **Validation SSIM:** ~0.797
-* **Validation PSNR:** ~18.64 dB
-* **Validation Loss:** ~0.168
+* **Validation SSIM:** ~0.827
+* **Validation PSNR:** ~18.69 dB
+* **Validation Loss:** ~0.162
 
 
 ---
