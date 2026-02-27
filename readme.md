@@ -14,27 +14,29 @@ NanoLILY/
 │   └── model_evaluation/                  # Evaluation visuals and comparisons
 │
 ├── dataset/
-│   ├── dataset.md                         # links to LoL v1 and LoL v2 dataset  
+│   └── dataset.md                         # Links to LoL v1 and LoL v2 datasets
 │
 ├── docs/
-│   └── architecture.md                    # Model architecture and design decisions
+│   ├── architecture.md                    # Model architecture and design decisions
+│   └── deep-dive.md                       # Technical deep dive into NanoLILY
 │
 ├── model/
-│   └── NanoLILY.md                        # Link of pre-trained weights for NanoLILY hosted on Kaggle
+│   └── NanoLILY.md                        # Link to pretrained weights (Kaggle)
 │
 ├── notebook/
 │   ├── NanoLILY_baseline.ipynb            # Baseline training & experiments
-│   └── Fine_tuning_NanoLILY.ipynb         # Fine-tuning experiments
+│   ├── Fine_tuning_NanoLILY.ipynb         # Fine-tuning experiments
+│   ├── Evaluate_NanoLILY.ipynb            # 32-bit standalone metric verification 
+│   └── Visualize_NanoLILY.ipynb           # Intermediate tensor & branch visualization
 │
 ├── results/
-│   └── Evaluation.ipynb                   # Notebook for evaluation results
-│   ├── LILY_Bloom_Engine_stress_test.md   # Real-world stress tests & observations                                
-│   └── NanoLILY_results_visualization.md  # Quantitative + qualitative result analysis
-│   └── failure_cases.md                   # Failure cases images     
+│   ├── failure_cases.md                   # Documented failure cases
+│   ├── LILY_Bloom_Engine_stress_test.md   # Real-world stress tests & observations
+│   └── NanoLILY_results_visualization.md  # Quantitative + qualitative analysis
 │
 ├── demo.ipynb                             # Plug-and-play inference demo
-├── readme.md                              # Project overview and usage
-├── requirements-demo.txt                  # Dependencies for demo notebook
+├── readme.md                              # Project overview, setup & usage
+├── requirements-demo.txt                  # Minimal dependencies for inference/demo
 └── requirements-training.txt              # Full training dependencies
 ```
 
