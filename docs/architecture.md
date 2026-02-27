@@ -30,6 +30,8 @@ This is where the local textures and global lighting shifts are combined into a 
   * *The Scale Math:* Because the original input is normalized to `[0.0, 1.0]`, a residual in the range of `[-1.0, 1.0]` has massive mathematical power. If a dark pixel is `0.05` and the network outputs a residual of `+0.85`, that pixel instantly shifts to a brightly illuminated `0.90`. 
   * *The Benefit:* This residual connection injects the recovered textures and lighting directly into the image, preventing the network from having to destructively reconstruct the baseline structural details from scratch.
 
+*(Note: To see the step-by-step tensor visualization and mathematical proof of this branch separation, see the [Deep Dive Documentation](deep_dive.md)).*
+
 ---
 
 ## II. LILY Bloom Engine (The Inference Pipeline)

@@ -49,3 +49,16 @@ Before the final residual addition, the outputs of the CNN branch and the FFT br
 This layer acts as a **Learnable Pixel-Wise Mixer**. It does not just make minor adjustments; it calculates a mathematical weighted average across the 6 channels for every single pixel. It allows the network to effectively state: *"Use the FFT branch to generate the smooth global spotlight, and use the CNN branch to draw the high-frequency textures inside that spotlight."*
 
 The output is a 3-channel **Enhancement Map** that binds the global illumination shift and the spatial texture recovery into a single tensor, which is then added to the original dark input to get final enhanced image.
+
+## 4. Visual Proof of Branch Separation
+
+To prove that the dual-branch architecture successfully decouples high-frequency textures from low-frequency illumination, we can intercept and visualize the intermediate tensors immediately before the `1x1` fusion layer.
+
+![Branch Visualization](../assets/model_evaluation/branch_visualization.png)
+
+**Visual Breakdown:**
+1. **Original Dark Input:** The baseline `[0.0, 1.0]` tensor.
+2. **CNN Output (Branch A):** The spatial convolutions hunt for local pixel variances. Visually, this output resembles a high-pass filter or edge-detector. It proves the CNN is strictly amplifying the microscopic gravel, leaf, and structural textures hidden in the dark.
+3. **FFT Output (Branch B):** The frequency mask scales the amplitude of the low frequencies. Visually, this output is a smooth, glowing color gradient. It proves the FFT branch completely ignores sharp edges and acts purely as a global illumination map.
+4. **Residual Mask (The Fusion):** The `1x1` convolution learns to mix the sharp edges of the CNN with the glowing spotlight of the FFT, bounding the result via `Tanh()` to create the final `[-1.0, 1.0]` Enhancement Map.
+5. **Final Enhanced Output:** The residual map mathematically added to the dark input (`identity + residual`), fully restoring the image without destroying the original structural phase.
