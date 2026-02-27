@@ -24,9 +24,9 @@ NanoLILY/
 │   └── NanoLILY.md                        # Link to pretrained weights (Kaggle)
 │
 ├── notebook/
-│   ├── NanoLILY_baseline.ipynb            # Baseline training & experiments
+│   ├── Evaluation.ipynb                   # 32-bit standalone metric verification
 │   ├── Fine_tuning_NanoLILY.ipynb         # Fine-tuning experiments
-│   ├── Evaluate_NanoLILY.ipynb            # 32-bit standalone metric verification 
+│   ├── NanoLILY_baseline.ipynb            # Baseline training & experiments
 │   └── Visualize_NanoLILY.ipynb           # Intermediate tensor & branch visualization
 │
 ├── results/
