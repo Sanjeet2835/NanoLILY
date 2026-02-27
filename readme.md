@@ -135,7 +135,10 @@ By utilizing the sliding-window Hanning inference, the system can process massiv
 
 ![Comparison](/assets/bloom_engine_gallery/grid_lowlight.jpg)
 
-![Comparison](/assets/bloom_engine_gallery/grid_0_c4NxOzlm9w2CLv41.jpg)
+![Comparison](/assets/bloom_engine_gallery/grid_pexels-elijahsad-3473541.jpg)
+
+![Comparison](assets/bloom_engine_gallery/grid_3023903333_198a8d0e18_b.jpg)
+
 
 [➡️ Click Here to view the Real-World Stress Test Gallery](https://github.com/Sanjeet2835/NanoLILY/blob/main/results/LILY%20Bloom%20Engine%20stress%20test.md)
 
