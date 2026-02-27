@@ -5,27 +5,30 @@ This document outlines the specific mathematical and structural flows of the Nan
 ---
 
 ## I. NanoLILY Core (The Neural Network)
-NanoLILY is a dual-branch architecture designed to decouple local texture extraction from global illumination mapping. It operates strictly on `224x224` spatial dimensions during training.
+NanoLILY is a dual-branch architecture designed to decouple local texture extraction from global illumination mapping. It operates strictly on `224x224` spatial dimensions during training and maintains an ultra-lightweight 129K parameter footprint.
 
-### 1. The Spatial CNN Branch (Local Textures)
-This branch consists of lightweight convolutions that maintain the spatial resolution while extracting pixel-level features (edges, boundaries, and noise patterns).
-* **Input:** `(B, 3, 224, 224)` 
-* **Process:** Depthwise separable convolutions (to maintain the 129K parameter constraint) with LeakyReLU activations.
-* **Output:** `(B, C, 224, 224)` where `C` is the latent channel dimension.
+### 1. The Spatial CNN Branch (Local Textures & Edges)
+This branch acts as a spatial magnifying glass. It hunts for the ultra-faint edge gradients and textures that are technically present in the dark pixels but invisible to the human eye.
+* **Input:** `(B, 3, 224, 224)` — Note: PyTorch normalizes these image tensors to a strict `[0.0, 1.0]` scale (where 0.0 is pitch black and 1.0 is pure white).
+* **Process:** Standard 2D spatial convolutions coupled with Instance Normalization and LeakyReLU activations. The features are processed through a shallow encoder-decoder step with a skip connection (`up1 + s1`) to prevent spatial degradation.
+* **Output:** A final convolution collapses the latent features back down to exactly 3 RGB channels: `(B, 3, 224, 224)`.
 
 ### 2. The Global FFT Branch (Illumination Mapping)
-This branch shifts the image into the frequency domain to adjust the global lighting context without requiring memory-heavy self-attention matrices.
+This branch shifts the image into the frequency domain to adjust the global lighting context, completely bypassing the need for memory-heavy self-attention matrices.
 * **Input:** `(B, 3, 224, 224)`
 * **Transform:** `torch.fft.rfft2` converts the spatial tensor into complex frequency representations.
-* **Process:** A learnable complex-valued weight matrix scales the amplitude of the low-frequency components (the DC component representing baseline brightness) while preserving high-frequency phase data.
+* **Process:** A learnable, real-valued weight matrix `(1, 3, 224, 113)` initialized at `0.01` acts as an amplitude scalar. Because it is a real-valued scalar applied to complex numbers, it adjusts global brightness and contrast magnitudes while strictly preserving the high-frequency structural phase data.
 * **Inverse Transform:** `torch.fft.irfft2` brings the manipulated frequencies back to the spatial domain.
-* **Output:** `(B, C, 224, 224)`
+* **Output:** `(B, 3, 224, 224)` (3 RGB channels).
 
-### 3. Fusion & Residual Reconstruction
-* The outputs of both branches are concatenated along the channel dimension: `(B, 6, 224, 224)` (3 channels from spatial + 3 from frequency).
-* A `1x1` convolution fuses these features back to standard RGB space.
-* A `Tanh()` activation bounds this output to `[-1, 1]`, representing the **residual illumination map**.
-* **Final Output:** The residual map is added directly to the original input tensor (`identity + residual`). This residual connection allows the network to learn only the necessary lighting adjustments, preserving the original structural details without having to reconstruct the entire image from scratch.
+### 3. Fusion & Residual Reconstruction (The Enhancement Map)
+This is where the local textures and global lighting shifts are combined into a final mathematical mask.
+* **Concatenation:** The outputs of both branches are concatenated along the channel dimension: `(B, 6, 224, 224)` (3 channels from spatial + 3 from frequency).
+* **Fusion:** A `1x1` convolution fuses these 6 features back to standard 3-channel RGB space.
+* **Activation:** A `Tanh()` activation bounds this output to strictly `[-1.0, 1.0]`. This tensor is not just a lighting mask; it is a highly complex **Enhancement Map** containing both the global illumination shifts (from the FFT) and the amplified high-frequency textures (from the CNN).
+* **Final Output (`identity + residual`):** The Enhancement Map is added directly to the original dark input tensor. 
+  * *The Scale Math:* Because the original input is normalized to `[0.0, 1.0]`, a residual in the range of `[-1.0, 1.0]` has massive mathematical power. If a dark pixel is `0.05` and the network outputs a residual of `+0.85`, that pixel instantly shifts to a brightly illuminated `0.90`. 
+  * *The Benefit:* This residual connection injects the recovered textures and lighting directly into the image, preventing the network from having to destructively reconstruct the baseline structural details from scratch.
 
 ---
 
