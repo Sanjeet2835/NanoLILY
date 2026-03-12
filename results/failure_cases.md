@@ -4,5 +4,6 @@
 
 ![Comparison](../assets/failure_cases_images/streetlight.jpg)
 
-![Comparison](..assets/failure_cases_images/grid_Low_light_(39747320674).jpg)
+![Comparison](../assets/failure_cases_images/grid_Low_light_(39747320674).jpg)
 
+![Comparison](../assets/failure_cases_images/grid_forest_fog.png)
